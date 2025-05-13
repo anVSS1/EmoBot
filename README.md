@@ -113,7 +113,7 @@ http://localhost:5000
 ## 🧠 Model Info
 
 - Fine-tuned **XLM-RoBERTa-base** on the **GoEmotions** dataset.
-- Multilingual emotion detection (English & French).
+- Multilingual emotion detection (It detects the emotions from different texts but the dataset has Englis texts only).
 - Output used to guide response generation via Gemini API.
 
 ---
@@ -132,7 +132,7 @@ http://localhost:5000
 - [ ] Deploy on Hugging Face Spaces / Render / Vercel
 - [ ] Add live demo link
 - [ ] Cache Gemini responses to reduce API calls
-- [ ] Add more languages (Arabic, etc.)
+- [ ] Use a different dataset
 - [ ] Add a database to save chats (MongoDB / SQLite)
 
 ---
@@ -148,7 +148,7 @@ MIT — use it, remix it, just give credit.
 **Anass Ouzaouit**  
 Master's in Business Intelligence & Big Data Analytics  
 ML Engineer | Prompt Writer | AI Enthusiast  
-[LinkedIn](https://linkedin.com/in/your-profile) • [GitHub](https://github.com/anVSS1)
+[LinkedIn](https://linkedin.com/in/anass-ouzaouit) • [GitHub](https://github.com/anVSS1)
 
 ---
 
