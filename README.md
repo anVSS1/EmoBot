@@ -1,155 +1,110 @@
-# 🧠 EmoBot — Multilingual Emotion-Aware Chatbot
+# 🤖 EmoBot: Emotion-Aware Multilingual Chatbot
 
-EmoBot is an emotion-savvy chatbot that *feels* your vibe. It detects emotions in your messages using a fine-tuned **XLM-RoBERTa** model and responds with emotion-aligned text generated via the **Gemini API**. Whether you're angry, sad, joyful, or just chillin', EmoBot’s got a response that *gets you* — in different languages.
+> 🧠 Detect emotions from user input and generate emotionally aligned responses using cutting-edge NLP models!
 
----
+## 🚀 Features
 
-## 🔥 Features
-
-- 🎯 **Emotion Detection** — Powered by a fine-tuned XLM-RoBERTa model trained on GoEmotions.
-- 💬 **LLM-Based Response Generation** — Uses Gemini API to generate emotionally appropriate replies.
-- 🌐 **Multilingual Support** — Works in **English** and **French** (emotion detection).
-- 🎤 **Voice Input** — Speak your message directly with speech-to-text.
-- 🔊 **Text-to-Speech Output** — EmoBot talks back with emotion-based responses.
-- 🧠 **Emotion Labels Displayed** — See which emotion was detected for each message.
-- 🖥️ **Frontend** — Clean UI built with HTML, CSS, and JavaScript.
-- 🔙 **Backend** — Flask handles the magic under the hood.
-- 🧳 **Model File Tracked via Git LFS** — 1.1GB `.safetensors` model properly managed.
+* 🔍 **Emotion Detection** using **XLM-RoBERTa** fine-tuned on the GoEmotions dataset
+* 🌐 **Multilingual support** (even though the dataset is English-only, the model understands other languages!)
+* 💬 **Text & Voice Input**
+* 🔊 **Text-to-Speech (TTS)** for bot responses
+* 🎨 **Dark mode toggle**
+* 📱 Frontend built with **HTML/CSS/JS**, powered by Flask backend
+* 🌈 Emotion support system to help users cope emotionally
+* 🧠 Integrates **Gemini API** for smart and human-like text generation
 
 ---
 
-## 🚀 Demo
+## 🗂️ Project Structure
 
-> _(Screenshots to be added later)_
-
----
-
-## 📁 Project Structure
-
-```bash
+```
 EmoBot/
 │
-├── app.py                         # Flask backend
-├── requirements.txt              # Python dependencies
-├── README.md                     # This file
+├── app.py                      # Flask backend
+├── requirements.txt           # Python dependencies
+├── README.md                  # You're reading it!
 │
 ├── static/
-│   ├── css/                      # Frontend styles
-│   ├── js/                       # Frontend logic (TTS, speech, UI, etc.)
+│   ├── css/                   # Styling (home, chat, etc.)
+│   ├── js/                    # Frontend logic (TTS, dark mode, etc.)
 │   └── models/
-│       └── xlm-roberta_emotion_model/
-│           ├── model.safetensors      # Main model file (Git LFS)
-│           ├── config.json
-│           ├── tokenizer_config.json
-│           ├── sentencepiece.bpe.model
-│           └── special_tokens_map.json
+│       └── xlm-roberta_emotion_model/   # Emotion detection model (handled via Git LFS)
 │
-├── templates/
-│   ├── index.html                # Landing page
-│   ├── chat.html                 # Chat interface
-│   ├── 404.html                  # Error pages
-│   └── 500.html
+├── templates/                 # HTML pages (chat, home, error pages)
+└── ...
 ```
 
 ---
 
-## 🛠️ Setup Instructions
+## 🧪 Tech Stack
 
-### 1. Clone the Repo
+| Layer      | Tech                     |
+| ---------- | ------------------------ |
+| Backend    | Python, Flask            |
+| Frontend   | HTML, CSS, JavaScript    |
+| NLP Model  | XLM-RoBERTa + GoEmotions |
+| AI Gen API | Gemini                   |
+| Voice      | Web Speech API (JS)      |
+
+---
+
+## 💾 Model Info
+
+The `xlm-roberta_emotion_model` folder contains:
+
+* `model.safetensors` — 🔒 Fine-tuned model (1.1 GB, tracked with Git LFS)
+* `config.json`, `tokenizer_config.json`, `sentencepiece.bpe.model` — 📦 Supporting files
+
+🗣 **Note**: Although the model was trained on an English dataset, using XLM-RoBERTa allows emotion detection in **multiple languages**. 💬🌍
+
+---
+
+## 🛠️ Setup
+
+1. **Clone this repo**:
 
 ```bash
 git clone https://github.com/anVSS1/EmoBot.git
 cd EmoBot
 ```
 
-### 2. Install Python Dependencies
+2. **Install dependencies**:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Install Git LFS and Pull Model File
-
-If not already installed:
+3. **Make sure Git LFS is installed** and pull model weights:
 
 ```bash
 git lfs install
-```
-
-Then pull the large model file:
-
-```bash
 git lfs pull
 ```
 
-### 4. Set Up Your Gemini API Key
-
-Create a `.env` file or hardcode your key (for local testing only):
-
-```bash
-export GEMINI_API_KEY=your_google_api_key_here
-```
-
-Or if you're on Windows (CMD):
-
-```cmd
-set GEMINI_API_KEY=your_google_api_key_here
-```
-
-### 5. Run the App
+4. **Run the app**:
 
 ```bash
 python app.py
 ```
 
-Then open your browser and head to:
-
-```
-http://localhost:5000
-```
+Then head to `http://localhost:5000` and start chatting 🎉
 
 ---
 
-## 🧠 Model Info
+## 📸 Screenshots
 
-- Fine-tuned **XLM-RoBERTa-base** on the **GoEmotions** dataset.
-- Multilingual emotion detection (Detects the emotions from different texts but the dataset has English texts only).
-- Output used to guide response generation via Gemini API.
+*Coming soon...*
 
 ---
 
-## ⚙️ Frontend Highlights
+## 📬 Contact
 
-- **Voice Input** 🎙: Record speech and convert to text
-- **Voice Output** 🔊: Speak the chatbot's responses
-- **Dark Mode** 🌙: JavaScript-powered theme toggle
-- **Smooth UI** 💅: Separate pages for chat and landing
+Built by **Anass Ouzaouit** — Master's student in BI & Big Data, passionate about AI and NLP 🔥
 
----
-
-## ✨ TODO / Future Work
-
-- [ ] Deploy on Hugging Face Spaces / Render / Vercel
-- [ ] Add live demo link
-- [ ] Cache Gemini responses to reduce API calls
-- [ ] Use a different dataset
-- [ ] Add a database to save chats (MongoDB / SQLite)
+Feel free to connect or give a ⭐ if you like the project!
 
 ---
 
-## 📜 License
+## 📄 License
 
-MIT — use it, remix it, just give credit.
-
----
-
-## 👨‍💻 Author
-
-**Anass Ouzaouit**  
-Master's in Business Intelligence & Big Data Analytics  
-ML Engineer | Prompt Writer | AI Enthusiast  
-[LinkedIn](https://linkedin.com/in/anass-ouzaouit) • [GitHub](https://github.com/anVSS1)
-
----
-
-> EmoBot doesn't just talk — it *feels*. 🧠💬
+MIT License
