@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <div class="logo">
+          <i data-lucide="bot" class="logo-icon"></i>
+          <span>AI Voice Assistant</span>
+        </div>
+        <div class="nav-links">
+          <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+          <a href="{{ url_for('chat') }}" class="nav-link">Chat</a>
+          <button
+            id="darkModeToggle"
+            class="dark-mode-toggle"
+            aria-label="Toggle dark mode"
+          >
+            <i data-lucide="moon"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container" style="text-align: center; padding: 4rem 1rem">
+        <h1 style="font-size: 4rem; margin-bottom: 1rem">404</h1>
+        <h2>Page Not Found</h2>
+        <p style="margin: 1rem 0">The page you're looking for doesn't exist.</p>
+        <a href="{{ url_for('index') }}" class="button">Return Home</a>
+      </div>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="{{ url_for('static', filename='js/darkMode.js') }}"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

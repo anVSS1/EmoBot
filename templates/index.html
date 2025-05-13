@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Assistant</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="{{ url_for('static', filename='js/utils.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/darkMode.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/team.js') }}"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <div class="logo">
+          <i data-lucide="bot" class="logo-icon"></i>
+          <span>AI Assistant</span>
+        </div>
+        <div class="nav-links">
+          <a href="/" class="nav-link active">Home</a>
+          <a href="{{ url_for('chat') }}" class="nav-link">Chat</a>
+          <button
+            id="darkModeToggle"
+            class="dark-mode-toggle"
+            aria-label="Toggle dark mode"
+          >
+            <i data-lucide="moon"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>
+            <span>Welcome to</span>
+            <span class="accent">AI Assistant</span>
+          </h1>
+          <p>
+            Experience the next generation of AI communication with emotion
+            detection, multilingual support, and natural voice interaction.
+          </p>
+          <a href="{{ url_for('chat') }}" class="button">Get Started</a>
+        </div>
+      </section>
+
+      <section class="features container">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="heart"></i>
+          </div>
+          <h3>Emotion Detection</h3>
+          <p>
+            Advanced emotion recognition technology that understands and
+            responds to your feelings.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="globe"></i>
+          </div>
+          <h3>Multilingual Support</h3>
+          <p>
+            Communicate effortlessly in multiple languages with natural
+            translations.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="mic"></i>
+          </div>
+          <h3>Voice Interaction</h3>
+          <p>
+            Natural voice commands and responses for a hands-free experience.
+          </p>
+        </div>
+      </section>
+
+      <section class="team">
+        <div class="container">
+          <h2>Meet Our Team</h2>
+          <p class="team-subtitle">The brilliant minds behind AI Assistant</p>
+
+          <div class="team-grid">
+            <!-- Team members will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Initialize Lucide icons after DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        lucide.createIcons();
+      });
+    </script>
+  </body>
+</html>

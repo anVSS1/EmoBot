@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat - AI Assistant</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/chat.css') }}"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="{{ url_for('static', filename='js/utils.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/mockApi.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/darkMode.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/messageUtils.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/voiceUtils.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <div class="logo">
+          <i data-lucide="bot" class="logo-icon"></i>
+          <span>AI Assistant</span>
+        </div>
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/chat.html" class="nav-link active">Chat</a>
+          <button
+            id="darkModeToggle"
+            class="dark-mode-toggle"
+            aria-label="Toggle dark mode"
+          >
+            <i data-lucide="moon"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="chat-container container">
+        <div class="chat-messages" id="chatMessages"></div>
+
+        <!-- ...existing code... -->
+        <div class="chat-input">
+          <div class="input-group">
+            <input
+              type="text"
+              id="messageInput"
+              placeholder="Type your message..."
+            />
+            <button
+              id="recordButton"
+              class="icon-button"
+              title="Start voice recording"
+            >
+              <i data-lucide="mic"></i>
+            </button>
+            <button
+              id="sendButton"
+              class="icon-button accent"
+              title="Send message"
+            >
+              <i data-lucide="send"></i>
+            </button>
+          </div>
+        </div>
+        <!-- ...existing code... -->
+      </div>
+    </main>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
