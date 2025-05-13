@@ -1,6 +1,6 @@
 # 🧠 EmoBot — Multilingual Emotion-Aware Chatbot
 
-EmoBot is an emotion-savvy chatbot that *feels* your vibe. It detects emotions in your messages using a fine-tuned **XLM-RoBERTa** model and responds with emotion-aligned text generated via the **Gemini API**. Whether you're angry, sad, joyful, or just chillin', EmoBot’s got a response that *gets you* — in English and French.
+EmoBot is an emotion-savvy chatbot that *feels* your vibe. It detects emotions in your messages using a fine-tuned **XLM-RoBERTa** model and responds with emotion-aligned text generated via the **Gemini API**. Whether you're angry, sad, joyful, or just chillin', EmoBot’s got a response that *gets you* — in different languages.
 
 ---
 
