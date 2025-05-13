@@ -113,7 +113,7 @@ http://localhost:5000
 ## 🧠 Model Info
 
 - Fine-tuned **XLM-RoBERTa-base** on the **GoEmotions** dataset.
-- Multilingual emotion detection (It detects the emotions from different texts but the dataset has Englis texts only).
+- Multilingual emotion detection (Detects the emotions from different texts but the dataset has English texts only).
 - Output used to guide response generation via Gemini API.
 
 ---
