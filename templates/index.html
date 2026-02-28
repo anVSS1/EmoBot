@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EmoBot — Emotion-Aware Chatbot</title>
+    <meta
+      name="description"
+      content="An emotionally intelligent chatbot powered by XLM-RoBERTa and Gemini AI"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- ─── Header ─────────────────────────────────────────────────── -->
+    <header class="header">
+      <nav class="nav container">
+        <div class="logo">
+          <i data-lucide="bot"></i>
+          <span>EmoBot</span>
+        </div>
+        <div class="nav-actions">
+          <a href="/" class="nav-link active">Home</a>
+          <a href="/chat" class="nav-link">Chat</a>
+          <button
+            class="btn-icon"
+            id="darkModeBtn"
+            aria-label="Toggle dark mode"
+          >
+            <i data-lucide="moon"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ─── Hero ───────────────────────────────────────────────── -->
+      <section class="hero">
+        <!-- Floating orbs (CSS-animated) -->
+        <div class="hero-orbs">
+          <div class="orb"></div>
+          <div class="orb"></div>
+          <div class="orb"></div>
+          <div class="orb"></div>
+          <div class="orb"></div>
+          <div class="orb"></div>
+          <div class="orb"></div>
+          <div class="orb"></div>
+        </div>
+
+        <div class="hero-content container">
+          <!-- Animated conic-gradient ring -->
+          <div class="hero-ring">
+            <div class="hero-ring-icon">
+              <i data-lucide="bot"></i>
+            </div>
+          </div>
+
+          <h1>
+            <span class="line1">Feel Understood With</span>
+            <span class="gradient">EmoBot</span>
+          </h1>
+
+          <p class="hero-desc">
+            An emotionally intelligent AI chatbot that detects 28 emotions in
+            real time and responds with genuine empathy — in any language.
+          </p>
+
+          <div class="hero-actions">
+            <a href="/chat" class="btn-primary">
+              <i data-lucide="message-circle"></i>
+              Start Chatting
+            </a>
+            <a href="#how-it-works" class="btn-secondary">
+              <i data-lucide="sparkles"></i>
+              How It Works
+            </a>
+          </div>
+
+          <!-- Emotion pills — staggered fade-in via JS -->
+          <div class="hero-emotions" id="heroEmotions"></div>
+        </div>
+      </section>
+
+      <!-- ─── How It Works ───────────────────────────────────────── -->
+      <section class="section" id="how-it-works">
+        <div class="container">
+          <h2 class="section-title">
+            How <span class="accent">It Works</span>
+          </h2>
+          <p class="section-sub">
+            Three steps to emotionally-aware conversations
+          </p>
+          <div class="steps-grid">
+            <div class="step-card anim">
+              <div class="step-num">1</div>
+              <h3>Send a Message</h3>
+              <p>
+                Type or speak in any language. EmoBot supports multilingual
+                input via text and voice.
+              </p>
+            </div>
+            <div class="step-card anim">
+              <div class="step-num">2</div>
+              <h3>Emotion Detection</h3>
+              <p>
+                A fine-tuned XLM-RoBERTa model analyzes your text and identifies
+                one of 28 distinct emotions.
+              </p>
+            </div>
+            <div class="step-card anim">
+              <div class="step-num">3</div>
+              <h3>Empathetic Response</h3>
+              <p>
+                Gemini AI crafts a reply that naturally aligns with your
+                emotional state and language.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Features ───────────────────────────────────────────── -->
+      <section class="section alt-bg">
+        <div class="container">
+          <h2 class="section-title">
+            Packed With <span class="accent">Features</span>
+          </h2>
+          <p class="section-sub">
+            Everything you need for meaningful AI conversations
+          </p>
+          <div class="features-grid">
+            <div class="feature-card anim">
+              <div class="feat-icon"><i data-lucide="heart"></i></div>
+              <h3>28 Emotions</h3>
+              <p>
+                Fine-tuned XLM-RoBERTa on the GoEmotions dataset — from joy and
+                love to grief and anger.
+              </p>
+            </div>
+            <div class="feature-card anim">
+              <div class="feat-icon"><i data-lucide="globe"></i></div>
+              <h3>Multilingual</h3>
+              <p>
+                Understands and responds in English, French, Arabic, Spanish,
+                and many more languages.
+              </p>
+            </div>
+            <div class="feature-card anim">
+              <div class="feat-icon"><i data-lucide="mic"></i></div>
+              <h3>Voice Input</h3>
+              <p>
+                Speak to EmoBot using Whisper or your browser's built-in speech
+                recognition.
+              </p>
+            </div>
+            <div class="feature-card anim">
+              <div class="feat-icon"><i data-lucide="volume-2"></i></div>
+              <h3>Text-to-Speech</h3>
+              <p>
+                Listen to responses with natural Edge TTS voices in multiple
+                languages.
+              </p>
+            </div>
+            <div class="feature-card anim">
+              <div class="feat-icon"><i data-lucide="download"></i></div>
+              <h3>Export as JSON</h3>
+              <p>
+                Download your entire conversation history for analysis or model
+                training.
+              </p>
+            </div>
+            <div class="feature-card anim">
+              <div class="feat-icon"><i data-lucide="thumbs-up"></i></div>
+              <h3>Feedback Loop</h3>
+              <p>
+                Like or dislike responses to help improve the AI for future
+                training iterations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ─── Footer ─────────────────────────────────────────────────── -->
+    <footer class="footer">
+      <div class="container">
+        <!-- Team -->
+        <div class="footer-team">
+          <h4>Built By</h4>
+          <div class="team-row">
+            <div class="team-card">
+              <div class="team-avatar"><i data-lucide="user"></i></div>
+              <div class="team-info">
+                <h5>Anass Ouzaouit</h5>
+                <p>AI &amp; Machine Learning</p>
+                <div class="team-socials">
+                  <a
+                    href="https://github.com/anVSS1"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="GitHub"
+                    ><i data-lucide="github"></i
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/in/anass-ouzaouit/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="LinkedIn"
+                    ><i data-lucide="linkedin"></i
+                  ></a>
+                  <a
+                    href="https://x.com/anvss__"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Twitter"
+                    ><i data-lucide="twitter"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar"><i data-lucide="user"></i></div>
+              <div class="team-info">
+                <h5>Mohamed Kannoun</h5>
+                <p>Business Intelligence &amp; Big Data</p>
+                <div class="team-socials">
+                  <a
+                    href="https://github.com"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="GitHub"
+                    ><i data-lucide="github"></i
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/in/kannoun/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="LinkedIn"
+                    ><i data-lucide="linkedin"></i
+                  ></a>
+                  <a
+                    href="https://x.com/M_KANNOUN"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Twitter"
+                    ><i data-lucide="twitter"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Links grid -->
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo"><i data-lucide="bot"></i><span>EmoBot</span></div>
+            <p>
+              An emotion-aware multilingual chatbot powered by XLM-RoBERTa and
+              Gemini AI.
+            </p>
+          </div>
+          <div>
+            <h4>Links</h4>
+            <div class="footer-links">
+              <a href="/">Home</a>
+              <a href="/chat">Chat</a>
+              <a
+                href="https://github.com/anVSS1/EmoBot"
+                target="_blank"
+                rel="noopener"
+                >GitHub</a
+              >
+            </div>
+          </div>
+          <div>
+            <h4>Tech Stack</h4>
+            <div class="footer-links">
+              <a href="#">Flask &amp; Python</a>
+              <a href="#">XLM-RoBERTa</a>
+              <a href="#">Gemini AI</a>
+              <a href="#">Edge TTS / Whisper</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 EmoBot. Built with care and AI.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

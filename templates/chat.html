@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat — EmoBot</title>
+    <meta
+      name="description"
+      content="Chat with EmoBot — an emotion-aware AI assistant"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- ─── Header ─────────────────────────────────────────────────── -->
+    <header class="header">
+      <nav class="nav container">
+        <div class="logo">
+          <i data-lucide="bot"></i>
+          <span>EmoBot</span>
+        </div>
+        <div class="nav-actions">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/chat" class="nav-link active">Chat</a>
+          <button class="btn-icon" id="newChatBtn" title="New chat">
+            <i data-lucide="plus"></i>
+          </button>
+          <button
+            class="btn-icon"
+            id="downloadBtn"
+            title="Download conversation as JSON"
+          >
+            <i data-lucide="download"></i>
+          </button>
+          <button
+            class="btn-icon"
+            id="darkModeBtn"
+            aria-label="Toggle dark mode"
+          >
+            <i data-lucide="moon"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ─── Chat Area ──────────────────────────────────────────────── -->
+    <div class="chat-layout">
+      <div class="chat-wrapper">
+        <div class="chat-messages" id="chatMessages"></div>
+
+        <div class="chat-input-area">
+          <div class="chat-input-group">
+            <input
+              type="text"
+              id="messageInput"
+              placeholder="Type your message…"
+              autocomplete="off"
+            />
+            <button class="btn-record" id="recordBtn" title="Voice input">
+              <i data-lucide="mic"></i>
+            </button>
+            <button class="btn-send" id="sendBtn" title="Send message">
+              <i data-lucide="send"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

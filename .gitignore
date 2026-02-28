@@ -1,0 +1,41 @@
+# ─── Environment ──────────────────────────────────────────────
+.env
+!.env.example
+
+# ─── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# ─── Model weights (tracked via Git LFS) ─────────────────────
+# Don't ignore — LFS handles the large .safetensors file
+
+# ─── IDE / Editor ────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.code-workspace
+
+# ─── OS junk ─────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# ─── Logs & temp ─────────────────────────────────────────────
+*.log
+*.tmp
+*.bak
+
+# ─── Misc ────────────────────────────────────────────────────
+.qodo/
+*.ipynb_checkpoints/
+startup.log

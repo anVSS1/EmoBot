@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>500 — EmoBot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <div class="logo"><i data-lucide="bot"></i><span>EmoBot</span></div>
+        <div class="nav-actions">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/chat" class="nav-link">Chat</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="error-page">
+      <div class="error-content">
+        <div class="error-glow">
+          <i data-lucide="alert-triangle"></i>
+        </div>
+        <div class="error-code">500</div>
+        <h2>Server Error</h2>
+        <p>Something went wrong on our end. Please try again in a moment.</p>
+        <a href="/" class="btn-primary">Back to Home</a>
+      </div>
+    </main>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
